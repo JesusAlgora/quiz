@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var quizController = reuire('../controllers/quiz_controller');
+var quizController = require('../controllers/quiz_controller');
 
 
 /* GET home page. */
