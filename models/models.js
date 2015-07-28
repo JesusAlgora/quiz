@@ -1,19 +1,6 @@
 var path = require('path');
 //Postgres DABABASE_URL = postgres://user:passwd@host:port/database
 //SQLite   DATABASE_URL = sqlite://@:/
-//var url = (process.env.DATABASE_URL || 'sqlite://:@:/').match(/(.*)\:\/\/(.*?)\emoticon.*)@(.*)\emoticon.*)\/(.*)/);
-//var url = (process.env.DATABASE_URL || 'sqlite://:@:/').match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
-//var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
-
-//var protocol   = (url[1]|null);
-//var dialect    = (url[1]|null);
-//var user       = (url[2]|null);
-//var pwd        = (url[3]|null);
-/*var port       = (url[5]|null);
-var host       = (url[4]|null);
-var DB_name    = (url[6]|null);
-
-var storage    = process.env.DATABASE_STORAGE;*/
 
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var DB_name  = (url[6]||null);
@@ -50,7 +37,7 @@ sequelize.sync().then(function(){
 	Quiz.count().then(function(count) {
 		if (count === 0) { 
 			Quiz.create({ pregunta: 'Capital de Italia', respuesta: 'Roma'})
-			Quiz.create({ pregunta: 'Capital de España', respuesta: 'Madrid'})
+			Quiz.create({ pregunta: 'Capital de Portugal', respuesta: 'Lisboa'})
 			.then(function(){console.log('Base de datos inicializada')});
 		};
 	});
